@@ -1,0 +1,26 @@
+create calendar --name Calendar1 --timezone Europe/Paris
+create calendar --name Calendar2 --timezone Africa/Cairo
+edit calendar --name Calendar1 --property name CalendarOne
+edit calendar --name CalendarOne --property timezone Africa/Cairo 
+edit calendar --name Calendar2 --property name CalendarTwo
+edit calendar --name CalendarTwo --property timezone Europe/Paris
+use calendar --name CalendarOne
+create event Party from 2024-02-06T08:30 to 2024-02-06T16:30 isPublic 'Boston' 'Gathering for Jessica'
+create event Biking from 2024-02-06T18:30 to 2024-02-07T19:30
+create event PDP2 from 2025-04-01T11:30 to 2025-04-01T12:30
+create event Meeting from 2025-02-06T08:30 to 2025-02-09T15:30 repeats MT for 5 times
+create event ClassPDP from 2025-03-06T09:30 to 2025-05-09T15:30 repeats MTS until 2024-02-20T08:30
+create event Event on 2024-02-15
+create event FootballGame on 2024-02-19 repeats MU for 5 times
+create event Pilates on 2024-06-09 repeats M until 2024-02-11
+copy event Event1 on 2024-02-06T08:30 --target CalendarTwo to 2024-03-07T16:30
+copy events on 2025-04-01 --target Cal2 to 2025-04-08
+print events on 2024-02-06
+print events from 2024-02-05T08:30 to 2024-02-07T08:30
+print events from 2024-02-05T08:30 to 2024-02-06T16:30
+print events from 2024-02-05T08:30 to 2024-02-06T07:30
+show status on 2024-02-06
+show status on 2024-02-05
+show status on 2024-02-09
+show status on 2024-02-10
+export cal events.csv
