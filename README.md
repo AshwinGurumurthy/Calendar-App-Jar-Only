@@ -264,62 +264,15 @@ As follows:
 -Import calendar events from a CSV file in to a selected calendar in the Calendar GUI application.
 
 
-# Division of work
-
-Assignment 4
-
-- Tasks were evenly divided between us, with the implementation of single events done by Geethanjali and recurring done by Ashwin.
-
-- The controller and query parser were jointly and collaboratively worked on.
-
-- The interactive view was done by Geethanjali while the headless was done by Ashwin.
-
-- Export functionality was also done by Ashwin.
-
-Assignment 5
-
-- The controller and view logic was handled by Geethanjali.
-
-- The model logic and functionality was handled by Ashwin.
-
-- Planning and getting the structure of the application together was a common effort.
-
-- Tests for the controller and view was handled my Geethanjali.
-
-- Tests for the model were handles my Ashwin.
-
-- Similarly, creation of resources was also split among us.
-
-Assignment 6
-
-- Both of us worked on the calendar and the View.
-
-- Little to no changes were made in the Models.
-
-- Tasks were evenly divided between us, with the implementation of edit events/event, create/edit calendars and showevents was done by Geethanjali and create events, import and export was done by Ashwin.
-
-- Controller tests and mocks were written by Ashwin.
-
-- Planning and getting the structure of the application together was a common effort.
-
-
 ### All of the aforementioned features are fully functional in all of the three modes except for copy events. Copy events is not supported in GUI mode.
 
 # In Summary,
 
-- We have created a class called Calendar Collection.java that stores all calendars in an List.
+- Created a class called Calendar Collection.java that stores all calendars in an List.
 
-- In our assignment 4 controller implementation, we noticed our controller was highly coupled with our model. Now, the controller interacts with just one object of model belonging to class calendar collection. We store a string of the current calendar used. We may now access previous methods of the calendar using the calendar collection class by chaining inputs.
-
-- In our model we have made Facade methods called Facade create, facade edit and facade print. The controller interacts with the model for create edit and print operations using these facade methods. In create it parses and finds keywords and sends them to the model, the model now checks for keywords and then further fine tune the methods for createEvent(we have implemented method overloading so it checks for the matching parameters and calls the relevant one), editEvent and queryEvents methods.
-
-- Previously in assignment 4, edit start date operations didn’t check for conflicts, we have added that functionality for assignment 5.
-
-- The RecurringEvent extends AbstractEvent, instead of previously extending
+- The RecurringEvent extends AbstractEvent.
 
 - We have moved ExportToCSV to controller, as IO operations should be handled in the model.
-
-- We have adjusted our code in such a way that we didn't have to make any changes in the model or re-write any existing code from Assignment 5. 
 
 - We fully developed the GUI View (CalendarGUI) and its interface (ICalendarGUI).
 
@@ -332,8 +285,4 @@ Assignment 6
 - Our import and export functionality requires the file to be inside the src or the utils folder in the project for it to work with only the file name provided or the user will have to provide the absolute path to the file in both import and export.
 
 - Ensured a clean separation between view and controller—GUI only interacts with the model via the controller.
-
-
-
-#### NOTE: We couldn’t achieve 100% mutation coverage as many lines were structurally unreachable due to our code design. These lines couldn’t be executed under any valid input or test scenario.
 
